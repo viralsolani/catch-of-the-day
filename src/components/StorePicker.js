@@ -3,12 +3,13 @@ import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
   myInput = React.createRef();
-
+  
   goToStore = event => {
     // 1. Stop the form from submitting
     event.preventDefault();
     // 2. get the text from that input
-    const storeName = this.myInput.value.value;
+    const storeName = this.myInput.current.value;
+    // const storeName = this.myInput.value.value;
     // 3. Change the page to /store/whatever-they-entered
     this.props.history.push(`/store/${storeName}`);
   };
